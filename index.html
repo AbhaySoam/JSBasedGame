@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="apple-mobile-web-app-capable" 
+	      content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" 
+		  content="black-translucent" />
+	<meta name="viewport" 
+	      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=device-dpi" />
+
+	<title>Skyward Bound</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.28/howler.min.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/game.js"></script>
+  <script src="js/music.js"></script>
+	<script src="js/collisions.js"></script>
+	<script src="js/snow.js"></script>
+ 	<script src="js/sprite.js"></script>
+ 	<script src="js/fps.js"></script>
+  	<script src="js/listeners.js"></script>
+  	<script src="js/particles.js"></script>
+  	<script src="js/canvasUtils.js"></script>
+    <script src="js/clickables.js"></script>
+  	<script src="js/bells.js"></script>
+   	<script src="js/rainbowColoredAnimatedText.js"></script>
+    <script src="js/assets.js"></script>
+    <script src="js/highscores.js"></script>
+    <script src="js/debug.js"></script>
+    <!--<script src="js/gameOverScreen.js"></script>-->
+    
+</head>
+<body>
+  <canvas id="myCanvas"  width="800" height="600" tabindex=0>
+  </canvas>
+<script>
+   // Inits
+window.onload = function init() {
+    // trying to hide navbar on android
+    function hideAddressBar(){
+        if(document.documentElement.scrollHeight<window.outerHeight/window.devicePixelRatio)
+           document.documentElement.style.height=(window.outerHeight/window.devicePixelRatio)+'px';
+           setTimeout(window.scrollTo(1,1),0);
+     }
+  
+     window.addEventListener("load",function(){hideAddressBar();});
+     window.addEventListener("orientationchange",function(){hideAddressBar();});
+  
+     // start game
+     var game = new GF();
+     game.start();
+}; 
+</script>
+</body>
+</html>
